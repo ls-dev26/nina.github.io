@@ -1,0 +1,101 @@
+body {
+    background-color: #2a0b15;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; 
+}
+
+section {
+    background: rgba(83, 21, 41, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    color: white;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 85%;
+    z-index: 10;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    animation-delay: 0.5s;
+}
+
+p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    animation-delay: 2s;
+    line-height: 1.6; 
+    letter-spacing: 0.5px; 
+}
+
+/* Coração */
+.coracao {
+    position: fixed;
+    top: -10vh; /* Começa fora da tela (no topo) */
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 25px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    animation: cair linear infinite;
+}
+
+/* Posições horizontais e velocidades diferentes para cada um */
+.c1 { left: 10%; animation-duration: 8s;  animation-delay: 0s; }
+.c2 { left: 25%; animation-duration: 12s; animation-delay: -5s; }
+.c3 { left: 45%; animation-duration: 10s; animation-delay: -2s; }
+.c4 { left: 65%; animation-duration: 14s; animation-delay: -7s; }
+.c5 { left: 80%; animation-duration: 9s;  animation-delay: -4s; }
+.c6 { left: 90%; animation-duration: 11s; animation-delay: -1s; }
+.c7 { left: 95%; animation-duration: 12s; animation-delay: -1s; }
+.c8 { left: 97%; animation-duration: 11s; animation-delay: -1s; }
+
+
+@keyframes cair {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        /* Cai até passar o fundo da tela */
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
